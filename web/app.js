@@ -1915,8 +1915,7 @@ if (typeof PDFJSDev === 'undefined' || PDFJSDev.test('GENERIC')) {
     // URL does not reflect proper document location - hiding some icons.
     let appConfig = PDFViewerApplication.appConfig;
     appConfig.toolbar.viewBookmark.setAttribute('hidden', 'true');
-    appConfig.secondaryToolbar.viewBookmarkButton.setAttribute('hidden',
-                                                               'true');
+    appConfig.secondaryToolbar.viewBookmarkButton.setAttribute('hidden','true');
     appConfig.toolbar.download.setAttribute('hidden', 'true');
     appConfig.secondaryToolbar.downloadButton.setAttribute('hidden', 'true');
   };

@@ -1914,3 +1914,18 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
     display: none;
   }
 }
+
+div.verticalToolbarSeparator,
+div.toolbarButtonSpacer,
+
+a#viewBookmark,
+
+button#openFile,
+button#sidebarToggle,
+button#secondaryToolbarToggle {
+  display: none;
+}
+
+select#scaleSelect {
+  height: 23px;
+}

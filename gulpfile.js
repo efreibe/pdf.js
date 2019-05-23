@@ -169,7 +169,7 @@ function createWebpackConfig(defines, output) {
         'pdfjs-lib': path.join(__dirname, 'web/pdfjs'),
       },
     },
-    devtool: enableSourceMaps ? 'source-map' : undefined,
+    devtool: enableSourceMaps && false /* ERNESTO: DO NOT ENABLE SOURCE MAPS */ ? 'source-map' : undefined,
     module: {
       rules: [
         {
@@ -711,8 +711,8 @@ gulp.task('generic', gulp.series('buildnumber', 'default_preferences', 'locale',
         .pipe(postcss([autoprefixer(AUTOPREFIXER_CONFIG)]))
         .pipe(gulp.dest(GENERIC_DIR + 'web')),
 
-    gulp.src('web/compressed.tracemonkey-pldi-09.pdf')
-        .pipe(gulp.dest(GENERIC_DIR + 'web')),
+    // gulp.src('web/compressed.tracemonkey-pldi-09.pdf')
+    //     .pipe(gulp.dest(GENERIC_DIR + 'web')),
   ]);
 }));
 
@@ -777,8 +777,8 @@ gulp.task('minified-pre', gulp.series('buildnumber', 'default_preferences',
         .pipe(postcss([autoprefixer(AUTOPREFIXER_CONFIG)]))
         .pipe(gulp.dest(MINIFIED_DIR + 'web')),
 
-    gulp.src('web/compressed.tracemonkey-pldi-09.pdf')
-        .pipe(gulp.dest(MINIFIED_DIR + 'web')),
+    // gulp.src('web/compressed.tracemonkey-pldi-09.pdf')
+    //     .pipe(gulp.dest(MINIFIED_DIR + 'web')),
   ]);
 }));
 
@@ -812,6 +812,7 @@ gulp.task('minified-post', gulp.series('minified-pre', function (done) {
   console.log();
   console.log('### Cleaning js files');
 
+  fs.rmdirSync(MINIFIED_DIR + '../tmp');
   fs.unlinkSync(MINIFIED_DIR + '/web/viewer.js');
   fs.unlinkSync(MINIFIED_DIR + '/web/debugger.js');
   fs.unlinkSync(MINIFIED_DIR + '/build/pdf.js');

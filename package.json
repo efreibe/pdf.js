@@ -28,7 +28,7 @@
     "gulp-zip": "^4.2.0",
     "jasmine": "^3.4.0",
     "jasmine-core": "^3.4.0",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^3.6.2",
     "jstransformer-markdown-it": "^2.1.0",
     "merge-stream": "^1.0.1",
     "mkdirp": "^0.5.1",
@@ -54,5 +54,8 @@
     "type": "git",
     "url": "git://github.com/mozilla/pdf.js.git"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "pdfjs-dist": "file:build/dist"
+  }
 }
